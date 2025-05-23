@@ -9,6 +9,8 @@ namespace BloodBank.Core.ValueObject
 
         public string Simbolo { get; }
 
+        public FatorRh() { }
+
         private FatorRh(string simbolo)
         {
             Simbolo = simbolo;

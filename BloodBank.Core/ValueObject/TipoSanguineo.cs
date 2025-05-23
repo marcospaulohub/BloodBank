@@ -8,6 +8,8 @@ namespace BloodBank.Core.ValueObject
     {
         public string Valor { get; }
 
+        public TipoSanguineo() { }
+
         private TipoSanguineo(string valor)
         {
             Valor = valor;

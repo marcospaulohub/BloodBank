@@ -5,13 +5,14 @@ namespace BloodBank.Core.ValueObject
 {
     public class Endereco : IEquatable<Endereco>
     {
-        public int Id { get; }                 // Usado apenas se necessário para persistência
         public string Logradouro { get; }
         public string Cidade { get; }
         public string Estado { get; }
         public string Cep { get; }
 
-        public Endereco(string logradouro, string cidade, string estado, string cep, int id = 0)
+        public Endereco() { }
+
+        public Endereco(string logradouro, string cidade, string estado, string cep)
         {
             if (string.IsNullOrWhiteSpace(logradouro))
                 throw new ArgumentException("Logradouro não pode ser vazio.");
@@ -25,7 +26,6 @@ namespace BloodBank.Core.ValueObject
             if (!Regex.IsMatch(cep, @"^\d{5}-\d{3}$"))
                 throw new ArgumentException("CEP inválido. Use o formato 00000-000.");
 
-            Id = id;
             Logradouro = logradouro;
             Cidade = cidade;
             Estado = estado.ToUpper();
