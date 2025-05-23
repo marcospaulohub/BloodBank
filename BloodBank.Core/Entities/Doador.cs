@@ -1,12 +1,15 @@
-﻿using BloodBank.Core.Enums;
+﻿using System;
+using BloodBank.Core.Enums;
 using BloodBank.Core.ValueObject;
-using System;
 
 namespace BloodBank.Core.Entities
 {
     public class Doador : BaseEntity
     {
+        public Doador() : base() { }
+
         public string NomeCompleto { get; set; }
+        public Telefone Telefone { get; set; }
         public string Email { get; set; }
         public DateTime DataNascimento { get; set; }
         public Sexo Sexo { get; set; }
