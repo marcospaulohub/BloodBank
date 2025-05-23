@@ -29,7 +29,7 @@ namespace BloodBank.Infra.Persistence.Mappings
                 .IsRequired();
 
             builder.Property(d => d.DataNascimento)
-                .HasColumnType("date")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             builder.Property(d => d.Sexo)
