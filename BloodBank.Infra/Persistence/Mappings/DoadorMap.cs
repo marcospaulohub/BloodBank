@@ -17,6 +17,13 @@ namespace BloodBank.Infra.Persistence.Mappings
                 .HasColumnType("varchar(200)")
                 .IsRequired();
 
+            builder.Property(d => d.Telefone)
+                .HasConversion(
+                    telefone => telefone.Numero,
+                    numero => new Telefone(numero))
+                .HasColumnType("varchar(20)")
+                .IsRequired();
+
             builder.Property(d => d.Email)
                 .HasColumnType("varchar(200)")
                 .IsRequired();
